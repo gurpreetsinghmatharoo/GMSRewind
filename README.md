@@ -1,6 +1,8 @@
 # GMSRewind
 Experimental Debug Rewind System for GameMaker Studio 2
 
+![GIF](https://i.imgur.com/iWrFFbf.gif)
+
 **Check releases for YYMP files**
 
 # How does it work?
