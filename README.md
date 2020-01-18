@@ -5,4 +5,5 @@ Experimental Debug Rewind System for GameMaker Studio 2
 
 # Known Issues
 • Doesn't work on nested arrays and data structures
+
 • Instances being created and destroyed are not recorded and may break
