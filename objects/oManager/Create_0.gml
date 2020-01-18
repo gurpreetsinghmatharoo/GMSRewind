@@ -30,6 +30,8 @@ if (enableCamera){
 	if (res) surface_resize(application_surface, CAM.W * CAM.SCALE, CAM.H * CAM.SCALE);
 	else surface_resize(application_surface, CAM.W, CAM.H);
 	
+	display_set_gui_size(CAM.W, CAM.H);
+	
 	//Window
 	window_set_size(CAM.W * CAM.SCALE, CAM.H * CAM.SCALE);
 	window_set_position(display_get_width()/2 - (CAM.W*CAM.SCALE)/2,

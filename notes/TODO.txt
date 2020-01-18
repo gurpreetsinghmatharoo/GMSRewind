@@ -1,0 +1,4 @@
+To do:
+
+• Instances that did not exist, destroy them on rewind, recreate on forward; test with bullets
+• Enable/disable physics check, if using default physics variables

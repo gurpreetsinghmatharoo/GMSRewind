@@ -1,13 +1,17 @@
 /// @description 
 // Is rewinding
 if (isRewinding) {
-	// Rewind back
-	if (inputRewind) {
-		rewindStep = clamp(rewindStep - 1, -rewindMaxSteps, -1);
+	// Vars
+	var _listSize	= ds_list_size(rewindList);
+	
+	// Go back / forward
+	var _rewindAxis = inputForward - inputRewind;
+	
+	if (_rewindAxis != 0) {
+		rewindStep = clamp(rewindStep + rewindSpeed * _rewindAxis, -min(rewindMaxSteps, _listSize), -1);
 	}
 	
 	// Set instance data
-	var _listSize	= ds_list_size(rewindList);
 	var _stepID		= _listSize + rewindStep;
 	var _arr		= rewindList[| _stepID];
 	var _arrSize	= array_length_1d(_arr);
@@ -25,6 +29,13 @@ if (isRewinding) {
 			
 			var _name	= _thisVar[ 0 ];
 			var _val	= _thisVar[ 1 ];
+			
+			// Array
+			if (is_array(_val)) {
+				var _valCopy = [];
+				array_copy(_valCopy, 0, _val, 0, array_length_1d(_val));
+				_val = _valCopy;
+			}
 			
 			variable_instance_set(_id, _name, _val);
 		}
